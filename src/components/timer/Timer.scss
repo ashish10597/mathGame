@@ -1,0 +1,57 @@
+@import "./../Base/values.scss";
+@import "./../Base/animation.scss";
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 20px;
+
+  padding: 20px 0px;
+  border: 2px solid $color-input-1;
+  outline: 2px solid $color-input-2;
+  border-radius: 6px;
+  color: $color-7;
+  font-size: 16px;
+
+  transition: all 0.1s linear;
+
+  &-top {
+    margin-top: 20px;
+  }
+
+  &-center {
+    margin-top: 20vh;
+  }
+
+  &-input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+  }
+
+  &-button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+  }
+
+  &-display {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid $color-input-1;
+    color: $color-7;
+    border-radius: 5px;
+
+    &-blink {
+      animation: animateBlinking 1s linear infinite;
+    }
+
+    &-invert {
+      background-color: $color-input-2;
+      color: $color-3;
+    }
+  }
+}

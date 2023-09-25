@@ -1,0 +1,73 @@
+@import "./../Base/values.scss";
+
+.equation-box {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  &-attempted {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 55px;
+    padding: 5px 10px;
+    color: $color-3;
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 95px;
+  border: 0.5px solid $color-3;
+  border-radius: 6px;
+
+  &-correct {
+    background-image: linear-gradient(120deg, $color-correct1, $color-correct2);
+  }
+
+  &-incorrect {
+    background-image: linear-gradient(
+      120deg,
+      $color-incorrect1,
+      $color-incorrect2
+    );
+  }
+}
+
+.equation-box-attempted {
+  width: 100%;
+}
+.equation-box-attempted-solution {
+  display: flex;
+  align-items: center;
+
+  gap: 40px;
+  height: 80%;
+
+  width: 40%;
+  margin-left: auto;
+
+  &-answer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid $color-7;
+    border-radius: 6px;
+    height: 90%;
+    width: 50%;
+    padding: 5px 10px;
+    box-shadow: 5px 5px 6px rgba($color-3, 0.4);
+    background-image: linear-gradient(120deg, $color-8, transparent);
+
+    &-span {
+      display: flex;
+      align-items: center;
+      height: 90%;
+      padding-right: 10px;
+      border-right: 1px solid $color-7;
+    }
+  }
+}

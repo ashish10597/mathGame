@@ -1,0 +1,74 @@
+@import "./../Base/values.scss";
+@import "./../Base/common.scss";
+
+.solution-block {
+  display: flex;
+  flex-direction: column;
+  color: $color-3;
+  // margin-top: 20px;
+
+  &-elements {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0px 20px;
+  }
+
+  &-divider {
+    height: 2px;
+    background-image: linear-gradient(120deg, $color-5, $color-6);
+  }
+}
+
+.no-attempts {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  font-size: 48px;
+
+  color: $color-7;
+}
+
+.smiley {
+  height: 48px;
+  width: 48px;
+
+  &-icon {
+    height: 100%;
+  }
+}
+
+.result-card {
+  background-image: url("./../../assets/bg5.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 2px;
+  border: 2px solid #22b8cf;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  &-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0px;
+    // border-bottom: 2px solid;
+  }
+
+  &-marks {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  &-message {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &-display {
+    color: #364fc7;
+    font-size: 48px;
+    font-weight: bold;
+  }
+}
