@@ -1,9 +1,12 @@
 import * as React from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { useDispatch, useSelector } from "react-redux";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import "./Chart";
 
 export default function BasicBars() {
   const gameData = useSelector((state) => state.gd);
+  const mobile = useMediaQuery("(min-width:600px)");
 
   function groupBy(arr, property) {
     return arr.reduce(function (memo, x) {
@@ -49,18 +52,26 @@ export default function BasicBars() {
     6: "MULTIPLICATION",
   };
 
+  let widthOfChart = 200;
+
   return (
     <BarChart
-      // xAxis={[{ scaleType: "band", data: ["group A", "group B", "group C"] }]}
       xAxis={[
         {
           scaleType: "band",
           data: data?.map((d) => typeToMathOperation[d[0].type]),
         },
       ]}
+      sx={{
+        // MuiChartsAxis-tickLabel
+        [`.MuiChartsAxis-tickLabel`]: {
+          transform: "rotate(-60deg) translate(-30px, 0px)",
+        },
+      }}
       series={[{ data: correctData }]}
-      width={900}
+      width={!mobile ? widthOfChart : 900}
       height={300}
+      className="bar-chart"
     />
   );
 }

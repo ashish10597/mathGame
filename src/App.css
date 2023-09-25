@@ -117,3 +117,19 @@
       background-clip: text;
       -webkit-background-clip: text;
 }
+
+@media screen and (max-width: 992px) {
+  .header {
+    width: 100%;
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .whole-page {
+    width: 100vw;
+    height: 140vh;
+    
+    gap: 10px;
+  }
+}

@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   gap: 40px;
+  font-weight: 700;
 
   &-attempted {
     display: flex;
@@ -12,6 +13,39 @@
     height: 55px;
     padding: 5px 10px;
     color: $color-3;
+
+    &-inner {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 992px) {
+      & {
+        width: 100%;
+        gap: 5px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+      }
+
+      &-inner {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    & {
+      width: 100%;
+      padding: 0;
+      margin: auto;
+      gap: 10px;
+    }
   }
 }
 
@@ -47,8 +81,28 @@
   gap: 40px;
   height: 80%;
 
-  width: 40%;
-  margin-left: auto;
+  width: 90%;
+
+  &-container {
+    width: 40%;
+    margin-left: auto;
+  }
+
+  @media screen and (max-width: 992px) {
+    & {
+      display: flex;
+      width: 100%;
+      margin-top: 10px;
+      justify-content: space-between;
+      margin-left: 0px;
+      gap: 10px;
+    }
+
+    &-container {
+      width: 100%;
+      margin-left: auto;
+    }
+  }
 
   &-answer {
     display: flex;

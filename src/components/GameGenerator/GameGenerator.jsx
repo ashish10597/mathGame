@@ -23,7 +23,7 @@ const GameGenerator = (game, dispatch, valueInput, value1, value2) => {
       const answer = valueToCalculate1;
 
       return (
-        <div>
+        <div className="equation-box">
           <span>{valueToCalculate1 * valueToCalculate2}</span> /
           <span> {valueToCalculate2}</span> ={" "}
           <Input dispatch={dispatch} answer={answer} valueInput={valueInput} />
@@ -35,7 +35,7 @@ const GameGenerator = (game, dispatch, valueInput, value1, value2) => {
       const answer = valueToCalculate2 ** 2;
 
       return (
-        <div>
+        <div className="equation-box">
           <span>Square of </span>
           <span>{valueToCalculate2} </span>={" "}
           <Input dispatch={dispatch} answer={answer} valueInput={valueInput} />
@@ -47,7 +47,7 @@ const GameGenerator = (game, dispatch, valueInput, value1, value2) => {
       const answer = valueToCalculate2 ** 3;
 
       return (
-        <div>
+        <div className="equation-box">
           <span>Cube of </span>
           <span>{valueToCalculate2} </span>={" "}
           <Input dispatch={dispatch} answer={answer} valueInput={valueInput} />
@@ -59,7 +59,7 @@ const GameGenerator = (game, dispatch, valueInput, value1, value2) => {
       const answer = valueToCalculate2;
 
       return (
-        <div>
+        <div className="equation-box">
           <span>Cube root of </span>
           <span>{valueToCalculate2 ** 3} </span>={" "}
           <Input dispatch={dispatch} answer={answer} valueInput={valueInput} />
@@ -71,7 +71,7 @@ const GameGenerator = (game, dispatch, valueInput, value1, value2) => {
       const answer = valueToCalculate2;
 
       return (
-        <div>
+        <div className="equation-box">
           <span>Square root of </span>
           <span>{valueToCalculate2 ** 2} </span>={" "}
           <Input dispatch={dispatch} answer={answer} valueInput={valueInput} />
@@ -83,7 +83,7 @@ const GameGenerator = (game, dispatch, valueInput, value1, value2) => {
       const answer = valueToCalculate2 * valueToCalculate1;
 
       return (
-        <div>
+        <div className="equation-box">
           <span>{valueToCalculate1}</span>x <span> {valueToCalculate2}</span> ={" "}
           <Input dispatch={dispatch} answer={answer} valueInput={valueInput} />
         </div>
@@ -127,17 +127,23 @@ export const AttemptedQuestionLayoutGenerator = (queObject) => {
       //MULTIPLICATION WITH X
       return (
         <div className="equation-box-attempted">
-          <Box
-            valueInput={queObject.answerGiven}
-            status={
-              parseInt(queObject.actualAnswer) ===
-              parseInt(queObject.answerGiven)
-            }
-          />{" "}
-          x <span> {queObject.value1}</span> ={" "}
-          <span>{queObject.value1 * queObject.value2}</span>
+          <div className="equation-box-attempted-inner">
+            <Box
+              valueInput={queObject.answerGiven}
+              status={
+                parseInt(queObject.actualAnswer) ===
+                parseInt(queObject.answerGiven)
+              }
+            />{" "}
+            <span>x</span>
+            <span> {queObject.value1}</span>
+            <span>= </span>
+            <span>{queObject.value1 * queObject.value2}</span>
+          </div>
           {/* Solution Matcher */}
-          {solutionMatcher(queObject)}
+          <div className="equation-box-attempted-solution-container">
+            {solutionMatcher(queObject)}
+          </div>
         </div>
       );
     }
@@ -146,17 +152,21 @@ export const AttemptedQuestionLayoutGenerator = (queObject) => {
 
       return (
         <div className="equation-box-attempted">
-          <span>{queObject.value1 * queObject.value2}</span> /
-          <span> {queObject.value2}</span> ={" "}
-          <Box
-            valueInput={queObject.answerGiven}
-            status={
-              parseInt(queObject.actualAnswer) ===
-              parseInt(queObject.answerGiven)
-            }
-          />
+          <div className="equation-box-attempted-inner">
+            <span>{queObject.value1 * queObject.value2}</span> <span>/</span>
+            <span> {queObject.value2}</span> <span>=</span>{" "}
+            <Box
+              valueInput={queObject.answerGiven}
+              status={
+                parseInt(queObject.actualAnswer) ===
+                parseInt(queObject.answerGiven)
+              }
+            />
+          </div>
           {/* Solution Matcher */}
-          {solutionMatcher(queObject)}
+          <div className="equation-box-attempted-solution-container">
+            {solutionMatcher(queObject)}
+          </div>
         </div>
       );
     }
@@ -165,17 +175,21 @@ export const AttemptedQuestionLayoutGenerator = (queObject) => {
 
       return (
         <div className="equation-box-attempted">
-          <span>Square of </span>
-          <span>{queObject.value2} </span>={" "}
-          <Box
-            valueInput={queObject.answerGiven}
-            status={
-              parseInt(queObject.actualAnswer) ===
-              parseInt(queObject.answerGiven)
-            }
-          />
+          <div className="equation-box-attempted-inner">
+            <span>Square of </span>
+            <span>{queObject.value2} </span> <span>=</span>{" "}
+            <Box
+              valueInput={queObject.answerGiven}
+              status={
+                parseInt(queObject.actualAnswer) ===
+                parseInt(queObject.answerGiven)
+              }
+            />
+          </div>
           {/* Solution Matcher */}
-          {solutionMatcher(queObject)}
+          <div className="equation-box-attempted-solution-container">
+            {solutionMatcher(queObject)}
+          </div>
         </div>
       );
     }
@@ -183,17 +197,22 @@ export const AttemptedQuestionLayoutGenerator = (queObject) => {
       //CUBE
       return (
         <div className="equation-box-attempted">
-          <span>Cube of </span>
-          <span>{queObject.value2} </span>={" "}
-          <Box
-            valueInput={queObject.answerGiven}
-            status={
-              parseInt(queObject.actualAnswer) ===
-              parseInt(queObject.answerGiven)
-            }
-          />
+          <div className="equation-box-attempted-inner">
+            <span>Cube of </span>
+            <span>{queObject.value2} </span>
+            <span>=</span>{" "}
+            <Box
+              valueInput={queObject.answerGiven}
+              status={
+                parseInt(queObject.actualAnswer) ===
+                parseInt(queObject.answerGiven)
+              }
+            />
+          </div>
           {/* Solution Matcher */}
-          {solutionMatcher(queObject)}
+          <div className="equation-box-attempted-solution-container">
+            {solutionMatcher(queObject)}
+          </div>
         </div>
       );
     }
@@ -201,17 +220,22 @@ export const AttemptedQuestionLayoutGenerator = (queObject) => {
       //CUBE ROOT
       return (
         <div className="equation-box-attempted">
-          <span>Cube root of </span>
-          <span>{queObject.value2 ** 3} </span>={" "}
-          <Box
-            valueInput={queObject.answerGiven}
-            status={
-              parseInt(queObject.actualAnswer) ===
-              parseInt(queObject.answerGiven)
-            }
-          />
+          <div className="equation-box-attempted-inner">
+            <span>Cube root of </span>
+            <span>{queObject.value2 ** 3} </span>
+            <span>=</span>{" "}
+            <Box
+              valueInput={queObject.answerGiven}
+              status={
+                parseInt(queObject.actualAnswer) ===
+                parseInt(queObject.answerGiven)
+              }
+            />
+          </div>
           {/* Solution Matcher */}
-          {solutionMatcher(queObject)}
+          <div className="equation-box-attempted-solution-container">
+            {solutionMatcher(queObject)}
+          </div>
         </div>
       );
     }
@@ -219,17 +243,22 @@ export const AttemptedQuestionLayoutGenerator = (queObject) => {
       //SQUARE ROOT
       return (
         <div className="equation-box-attempted">
-          <span>Square root of </span>
-          <span>{queObject.value2 ** 2} </span>={" "}
-          <Box
-            valueInput={queObject.answerGiven}
-            status={
-              parseInt(queObject.actualAnswer) ===
-              parseInt(queObject.answerGiven)
-            }
-          />
+          <div className="equation-box-attempted-inner">
+            <span>Square root of </span>
+            <span>{queObject.value2 ** 2} </span>
+            <span>=</span>{" "}
+            <Box
+              valueInput={queObject.answerGiven}
+              status={
+                parseInt(queObject.actualAnswer) ===
+                parseInt(queObject.answerGiven)
+              }
+            />
+          </div>
           {/* Solution Matcher */}
-          {solutionMatcher(queObject)}
+          <div className="equation-box-attempted-solution-container">
+            {solutionMatcher(queObject)}
+          </div>
         </div>
       );
     }
@@ -237,16 +266,21 @@ export const AttemptedQuestionLayoutGenerator = (queObject) => {
       //MULTIPLICATION
       return (
         <div className="equation-box-attempted">
-          <span>{queObject.value1}</span>x <span> {queObject.value2}</span> ={" "}
-          <Box
-            valueInput={queObject.answerGiven}
-            status={
-              parseInt(queObject.actualAnswer) ===
-              parseInt(queObject.answerGiven)
-            }
-          />
+          <div className="equation-box-attempted-inner">
+            <span>{queObject.value1}</span> <span>x</span>{" "}
+            <span> {queObject.value2}</span> <span>=</span>{" "}
+            <Box
+              valueInput={queObject.answerGiven}
+              status={
+                parseInt(queObject.actualAnswer) ===
+                parseInt(queObject.answerGiven)
+              }
+            />
+          </div>
           {/* Solution Matcher */}
-          {solutionMatcher(queObject)}
+          <div className="equation-box-attempted-solution-container">
+            {solutionMatcher(queObject)}
+          </div>
         </div>
       );
   }

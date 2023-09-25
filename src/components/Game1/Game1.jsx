@@ -88,7 +88,12 @@ const Game1 = () => {
             <span>Fill in the Box</span>
           </div>
           <form onSubmit={(e) => validateAnswer(e)}>
-            {gameGeneratorFunction(dispatch)}
+            <div className="form-block">
+              {gameGeneratorFunction(dispatch)}
+              <button className="form-block-submit" type="submit">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       )}

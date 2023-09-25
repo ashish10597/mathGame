@@ -32,7 +32,7 @@ const Timer = () => {
           setTimer("00:00:00");
         }
         setTimer(timeCalculator(minutesToSec));
-      }, 1000);
+      }, 100);
 
       return () => {
         console.log("clearing Now");
