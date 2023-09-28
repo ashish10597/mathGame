@@ -121,7 +121,6 @@ const solutionMatcher = (queObject) => {
 };
 
 export const AttemptedQuestionLayoutGenerator = (queObject) => {
-  // console.log(queObject);
   switch (parseInt(queObject.type)) {
     case 0: {
       //MULTIPLICATION WITH X

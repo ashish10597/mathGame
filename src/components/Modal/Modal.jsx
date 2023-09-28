@@ -132,7 +132,7 @@ const Modal = () => {
         return (
           <div className="solution-block">
             <div className="solution-block-elements">
-              <span>Q{i + 1}.</span>{" "}
+              <span className="solution-block-elements-slno">Q{i + 1}.</span>{" "}
               {AttemptedQuestionLayoutGenerator(queObject)}
             </div>
 
